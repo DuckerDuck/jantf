@@ -14,7 +14,6 @@ math_blocks.forEach((e) => {
     if (e.hasAttribute('math')){
         const math = e.getAttribute('math')
         katex.render(math, e, {
-            output: 'mathml',
             fleqn: false
         })
     }
