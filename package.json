@@ -27,7 +27,8 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "flexboxgrid": "^6.3.1"
+    "flexboxgrid": "^6.3.1",
+    "katex": "^0.11.1"
   },
   "browserslist": [
     "defaults",
