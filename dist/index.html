@@ -3,7 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="main.css">
+		<!-- Critical CSS-->
+		<link rel="stylesheet" href="index.css">
+
+		<!-- Non-Critical CSS-->
+		<link rel="preload" href="plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="stylesheet" href="plugins.css">
+		
 		<title>Jan Schutte</title>
 	</head>
 	<body>
@@ -151,6 +157,7 @@ if __name__ == '__main__':
 		<!-- Footer -->
 		<footer class="row footer"></footer>
 	
-		<script src="index.js"></script>	
+		<script src="index.js"></script>
+		<script src="plugins.js"></script>
 	</body>
 </html>

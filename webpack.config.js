@@ -3,10 +3,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: {
+        index: './src/index.ts',
+        plugins: './src/plugins.ts'
+    },
     mode: 'development',
     output: {
-        filename: 'index.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
@@ -19,7 +22,6 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    'style-loader',
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
