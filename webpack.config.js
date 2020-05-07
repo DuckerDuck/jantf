@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
     entry: './src/index.ts',
@@ -34,8 +35,12 @@ module.exports = {
         }
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        quiet: true
     },
     devtool: "source-map",
-    plugins: [new MiniCssExtractPlugin()]
+    plugins: [
+        new MiniCssExtractPlugin(),
+        new FriendlyErrorsWebpackPlugin()
+    ]
 };
