@@ -1,9 +1,104 @@
 @import '~flexboxgrid/dist/flexboxgrid.css'
+@import 'typography'
+@import 'colors'
+
+$border-radius: 5px
+$box-shadow: 0 4px 6px #0000001c, 0 1px 3px rgba(0, 0, 0, .1)
+$hover-scale: 1.02
+$animation-speed: 0.1s
+
+$padding: 8px
+$margin: 5px 5px 5px 0
 
 body
-    background-color: #efefef
-
+    background-color: $white
 
 figure
     img
         max-width: 100%
+
+select
+    appearance: none
+    -webkit-appearance: none
+    padding: $padding
+    border: 1px solid $white
+    border-bottom: 1px solid $highlight
+    border-radius: $border-radius
+    margin: $margin
+    background-color: $white
+    box-shadow: $box-shadow
+
+    &:focus
+        border: 1px solid $highlight
+
+    &::before
+        content: '*'
+        color: black
+
+input
+    appearance: none
+    -webkit-appearance: none
+
+input[type="text"]
+    padding: $padding
+    border: none
+    box-shadow: $box-shadow
+    margin: $margin
+    border-radius: $border-radius
+    border: 1px solid $white
+
+    &:focus
+        border: 1px solid $highlight
+
+input[type="radio"]
+    border-radius: 50%
+    width: 16px
+    height: 16px
+    border: 1px solid $highlight
+    margin-right: 5px
+    transition: all $animation-speed
+
+    &:checked
+        border: 5px solid $highlight
+
+    &:disabled
+        background-color: $gray-10
+        border: 1px solid $gray
+
+button
+    padding: 10px
+    border: none
+    border-radius: $border-radius
+    background-color: $highlight
+    color: $white
+    box-shadow: $box-shadow
+    margin: 3px
+    transform: scale(1)
+    transition: all $animation-speed
+
+    &:disabled
+        background-color: $highlight-10
+        color: $gray-10
+        &:hover
+            background-color: $highlight-10
+            transform: scale(1)
+    
+    &:hover
+        background-color: $highlight-70
+        transform: scale($hover-scale)
+
+    &.secondary
+        background-color: $white
+        color: $black
+
+        &:disabled
+            color: $highlight-10
+            background-color: $white
+            &:hover
+                background-color: $white
+                transform: scale(1)
+
+a
+    color: $lowlight
+    &:hover
+        color: $highlight

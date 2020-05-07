@@ -1,0 +1,37 @@
+@import 'colors'
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+
+$font-serif: 'Enriqueta', serif
+$font-sans-serif: 'Noto Sans', sans-serif
+
+body
+    font-family: $font-serif
+
+h1, h2, h3, h4
+    font-family: $font-sans-serif
+
+form
+    font-family: $font-sans-serif
+
+input
+    font-size: 11pt
+select
+    font-size: 11pt
+
+p
+    font-feature-settings: "kern" 1
+    font-kerning: normal
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+button
+    font-family: $font-sans-serif
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 1px
+
+figure
+    text-align: center
+    figcaption
+        color: $muted-text
+        font-style: italic
