@@ -5,7 +5,7 @@
 
 $border-radius: 5px
 $box-shadow: 0 4px 6px #0000001c, 0 1px 3px rgba(0, 0, 0, .1)
-$hover-scale: 1.02
+$hover-scale: 1.03
 $animation-speed: 0.15s
 
 $padding: 8px
@@ -19,21 +19,39 @@ header
 
     h1
         margin-right: $padding
-    
+
 nav
     a
         margin: $margin
-        padding: $padding
-        border-radius: $border-radius
-        transition: all $animation-speed
-        box-shadow: none
-        
-        &:hover
-            box-shadow: $box-shadow
+        position: relative
+        padding-bottom: 7px
+
+        &:before
+            content: ''
+            position: absolute
+            bottom: 2px
+            left: 0
+            right: 0
+            height: 1.5px
+            background-color: $accent
+            opacity: 0
+            transform: translateY(-3px)
+            transition: transform 0s, opacity 0s
+
+        &:hover, &:focus
+            &:before
+                opacity: 1
+                transform: translateY(0)
+
+            &:before
+                transition: transform $animation-speed, opacity $animation-speed
+
 
 figure
     img
         max-width: 100%
+        box-shadow: $box-shadow
+        border-radius: $border-radius
 
 select
     appearance: none
@@ -89,10 +107,9 @@ button
     transition: all $animation-speed
 
     &:disabled
-        background-color: $accent-10
-        color: $gray-10
+        background-color: $foreground-10
         &:hover
-            background-color: $accent-10
+            background-color: $foreground-10
             transform: scale(1)
     
     &:hover
@@ -104,7 +121,7 @@ button
         color: $foreground
 
         &:disabled
-            color: $accent-10
+            color: $foreground-70
             background-color: $white
             &:hover
                 background-color: $white
@@ -139,6 +156,13 @@ footer
     vertical-align: middle
     margin-right: 10px
 
+
+#search_btn
+    transition: transform $animation-speed
+    transform: scale(1)
+
+    &:hover, &:focus
+        transform: scale($hover-scale)
 
 #search_field
     width: 200px
