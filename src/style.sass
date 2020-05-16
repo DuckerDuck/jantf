@@ -6,13 +6,30 @@
 $border-radius: 5px
 $box-shadow: 0 4px 6px #0000001c, 0 1px 3px rgba(0, 0, 0, .1)
 $hover-scale: 1.02
-$animation-speed: 0.1s
+$animation-speed: 0.15s
 
 $padding: 8px
 $margin: 5px 5px 5px 0
 
 body
-    background-color: $white
+    background-color: $background
+
+header
+    text-align: right
+
+    h1
+        margin-right: $padding
+    
+nav
+    a
+        margin: $margin
+        padding: $padding
+        border-radius: $border-radius
+        transition: all $animation-speed
+        box-shadow: none
+        
+        &:hover
+            box-shadow: $box-shadow
 
 figure
     img
@@ -22,14 +39,14 @@ select
     appearance: none
     padding: $padding
     border: 1px solid $white
-    border-bottom: 1px solid $highlight
+    border-bottom: 1px solid $accent
     border-radius: $border-radius
     margin: $margin
     background-color: $white
     box-shadow: $box-shadow
 
     &:focus
-        border: 1px solid $highlight
+        border: 1px solid $accent
 
 input
     appearance: none
@@ -43,18 +60,18 @@ input[type="text"]
     border: 1px solid $white
 
     &:focus
-        border: 1px solid $highlight
+        border: 1px solid $accent
 
 input[type="radio"]
     border-radius: 50%
     width: 16px
     height: 16px
-    border: 1px solid $highlight
+    border: 1px solid $accent
     margin-right: 5px
     transition: all $animation-speed
 
     &:checked
-        border: 5px solid $highlight
+        border: 5px solid $accent
 
     &:disabled
         background-color: $gray-10
@@ -64,7 +81,7 @@ button
     padding: 10px
     border: none
     border-radius: $border-radius
-    background-color: $highlight
+    background-color: $foreground
     color: $white
     box-shadow: $box-shadow
     margin: 3px
@@ -72,37 +89,65 @@ button
     transition: all $animation-speed
 
     &:disabled
-        background-color: $highlight-10
+        background-color: $accent-10
         color: $gray-10
         &:hover
-            background-color: $highlight-10
+            background-color: $accent-10
             transform: scale(1)
     
     &:hover
-        background-color: $highlight-70
+        background-color: $foreground-70
         transform: scale($hover-scale)
 
     &.secondary
         background-color: $white
-        color: $black
+        color: $foreground
 
         &:disabled
-            color: $highlight-10
+            color: $accent-10
             background-color: $white
             &:hover
                 background-color: $white
                 transform: scale(1)
+    
+    &.tertiary
+        background-color: $accent
+        color: $white
+
+        &:hover
+            background-color: $accent-70
 
 a
-    color: $lowlight
+    color: $accent
     &:hover
-        color: $highlight
-
+        color: $accent
 
 pre
     padding: $padding
 
 footer
     height: 250px
-    background-color: $lowlight
+    background-color: $muted
     margin-top: 50px
+
+.icon-search
+    display: inline-block
+    width: 28px
+    height: 28px
+    background-color: $accent
+    mask: url('icons/search.svg') no-repeat center
+    vertical-align: middle
+    margin-right: 10px
+
+
+#search_field
+    width: 200px
+    transition: width $animation-speed
+    
+    &.hide
+        width: 0
+        padding-left: 0
+        padding-right: 0
+        margin-left: 0
+        margin-right: 0
+        visibility: hidden
