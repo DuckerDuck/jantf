@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+    <body>
+        {{ partial "header.html" . }}
+
+        <!-- Content -->
+        <div class="row">
+            <div class="col-xs-0 col-sm-2"></div>
+            <div class="col-xs-12 col-sm-8">
+                {{ block "main" . }}
+                {{ end }}
+            </div>
+            <div class="col-xs-0 col-sm-2"></div>
+        </div>
+        {{ partial "footer.html" . }}
+    </body>
+</html>

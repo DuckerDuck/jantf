@@ -1,0 +1,11 @@
+<button 
+{{ with .Get "type"}} 
+    class="{{.}}"
+{{ end }}
+
+{{ with .Get "disabled"}}
+    disabled
+{{ end }}
+
+> {{ .Inner }}
+</button>

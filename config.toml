@@ -1,0 +1,9 @@
+baseURL = "localhost:1313/"
+languageCode = "en-GB"
+title = "Jan Schutte"
+
+
+[markup]
+  [markup.highlight]
+    style = "monokailight"
+    tabWidth = 2

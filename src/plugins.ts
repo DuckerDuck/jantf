@@ -1,12 +1,7 @@
 import './plugins.sass'
 import katex from 'katex'
-import hljs from 'highlight.js'
-import python from 'highlight.js/lib/languages/python'
-
-hljs.registerLanguage('python', python);
 
 const math_blocks = document.querySelectorAll('div.math')
-const code_blocks = document.querySelectorAll('pre code')
 
 math_blocks.forEach((e) => {
     if (e.hasAttribute('math')){
@@ -17,6 +12,3 @@ math_blocks.forEach((e) => {
     }
 })
 
-code_blocks.forEach((e) => {
-    hljs.highlightBlock(e)
-})
