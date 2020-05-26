@@ -10,6 +10,5 @@ search_btn.addEventListener('click', (event) => {
     } else {
         search_field.classList.add('hide')
     }
-    
 })
 
