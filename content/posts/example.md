@@ -1,7 +1,7 @@
 ---
 title: "Example Post"
 date: 2020-05-19T00:07:31+02:00
-draft: true
+draft: false
 ---
 ## Subtitle of page
 ### Subsubtitle of page
@@ -33,7 +33,7 @@ already been visited: [link](https://google.com)
 
 
 {{< figure 
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Cute_grey_kitten.jpg/640px-Cute_grey_kitten.jpg"
+    src="https://images.jan.tf/xECrwThxHfNAi6FrByo71mG16wNDIyE0ZWiAfQX8ObU/fill/1200/500/no/1/bG9jYWw6Ly8vbXRfY29vay5qcGc.jpg"
     alt="example image"
     caption="Figure caption">}}
 
