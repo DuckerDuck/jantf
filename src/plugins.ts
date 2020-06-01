@@ -30,6 +30,24 @@ function initSearch(index) {
 
     search_field.addEventListener('keyup', event => {
         const results = fuse.search(search_field.value)
-        console.log(results)
+        render_results(results)
+        console.log('render')
     })
+}
+
+function render_results(results) {
+    const container = document.getElementById('search_result')
+    container.innerHTML = ''
+    
+    for (let result of results) {
+        // if (result.score < 0.5) {
+        //     continue
+        // }
+
+        const a = document.createElement('a')
+        a.innerText = result.item.title
+        a.href = result.item.uri
+
+        container.appendChild(a)
+    }
 }
