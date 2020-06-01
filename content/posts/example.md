@@ -33,14 +33,9 @@ already been visited: [link](https://google.com)
 3. List item
 
 
-{{< figure 
-    src="#"
-    alt="example image"
-    caption="Figure caption">}}
-
-
-<img src="{{< imgproxy url="local:///mt_cook.jpg" gravity="no" >}}" alt='example image'>
-
+{{<fig alt="example image" caption="Figure caption">}}
+    {{<imgproxy url="local:///mt_cook.jpg" gravity="no">}}
+{{</fig>}}
 
 
 
