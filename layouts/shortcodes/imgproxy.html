@@ -1,0 +1,13 @@
+
+{{ $salt := .Site.Data.imgproxy.config.salt }}
+{{ $key := .Site.Data.imgproxy.config.key }}
+{{ $url := .Get "url" | base64UrlSafeEncode }}
+{{ $resize := or (.Get "resize") "fill" }}
+{{ $width := or (.Get "width") "600" }}
+{{ $height := or (.Get "height") "250" }}
+{{ $gravity := or (.Get "gravity") "no" }}
+{{ $enlarge := or (.Get "enlarge") "1" }}
+{{ $extension := or (.Get "extension") "jpg" }}
+{{ $path := printf "%s" (print "/" $resize "/" $width "/" $height "/" $gravity "/" $enlarge "/" $url "." $extension) }}
+{{ $hmac := hmac $key $salt $path | base64UrlSafeEncode}}
+https://images.jan.tf/{{ $hmac }}{{ $path }}

@@ -1,0 +1,4 @@
+{
+    "salt": "Put your hex encoded salt here",
+    "key": "Put your hex encoded key here"
+}

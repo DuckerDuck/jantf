@@ -23,6 +23,7 @@ already been visited: [link](https://google.com)
 {{<button type="tertiary">}} Tertiary {{</button>}}
 {{<button disabled="True">}} Primary {{</button>}}
 
+
 * List item
 * List item
 * List item
@@ -33,9 +34,14 @@ already been visited: [link](https://google.com)
 
 
 {{< figure 
-    src="https://images.jan.tf/xECrwThxHfNAi6FrByo71mG16wNDIyE0ZWiAfQX8ObU/fill/1200/500/no/1/bG9jYWw6Ly8vbXRfY29vay5qcGc.jpg"
+    src="#"
     alt="example image"
     caption="Figure caption">}}
+
+
+<img src="{{< imgproxy url="local:///mt_cook.jpg" gravity="no" >}}" alt='example image'>
+
+
 
 
 ```python

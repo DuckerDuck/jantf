@@ -2,6 +2,8 @@ baseURL = "localhost:1313/"
 languageCode = "en-GB"
 title = "Jan Schutte"
 
+[markup.goldmark.renderer]
+  unsafe= true
 
 [markup]
   [markup.highlight]
