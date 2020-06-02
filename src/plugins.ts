@@ -5,7 +5,7 @@ import Fuse from 'fuse.js'
 const math_blocks = document.querySelectorAll('div.math')
 const fuse_options = {
     includeScore: true,
-    keys: ['categories', 'tags', 'title']
+    keys: ['categories', 'tags', 'title', 'summary']
 }
 
 math_blocks.forEach((e) => {
@@ -31,23 +31,27 @@ function initSearch(index) {
     search_field.addEventListener('keyup', event => {
         const results = fuse.search(search_field.value)
         render_results(results)
-        console.log('render')
     })
 }
 
 function render_results(results) {
-    const container = document.getElementById('search_result')
-    container.innerHTML = ''
+    const results_container = document.getElementById('search_result')
+    results_container.innerHTML = ''
     
     for (let result of results) {
-        // if (result.score < 0.5) {
-        //     continue
-        // }
+        const container = document.createElement('div')
+        container.classList.add('search-result-item')
 
         const a = document.createElement('a')
         a.innerText = result.item.title
         a.href = result.item.uri
 
+        const span = document.createElement('span')
+        span.innerText = result.item.date.split('T')[0]
+
         container.appendChild(a)
+        container.appendChild(span)
+
+        results_container.appendChild(container)
     }
 }
