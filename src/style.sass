@@ -14,6 +14,9 @@ $margin: 5px 5px 5px 0
 $search-icon-margin: 10px
 $search-icon-size: 28px
 
+$footer-height: 250px
+$footer-margin: 50px
+
 body
     background-color: $background
 
@@ -48,6 +51,9 @@ nav
 
             &:before
                 transition: transform $animation-speed, opacity $animation-speed
+
+.content-row
+    min-height: calc(100vh - #{$footer-height + $footer-margin})
 
 
 figure
@@ -143,9 +149,9 @@ a
         color: $accent
 
 footer
-    height: 250px
+    height: $footer-height
     background-color: $muted
-    margin-top: 50px
+    margin-top: $footer-margin
 
 .icon-search
     display: inline-block
