@@ -3,7 +3,10 @@ title: "Example Post"
 date: 2020-05-19T00:07:31+02:00
 draft: false
 ---
-## Subtitle of page
+## Introduction
+This page displays various elements so the styling can be developed. Its content
+beyond this section is nonsense.
+
 ### Subsubtitle of page
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -15,8 +18,7 @@ nulla pariatur.
 
 This text is inside of a paragraph
 
-This is what a [link](#) looks like, this one has
-already been visited: [link](https://google.com)
+This is what a [link](#) looks like.
 
 {{<button>}} Primary {{</button>}}
 {{<button type="secondary">}} Secondary {{</button>}}

@@ -1,6 +1,28 @@
 {{ define "main" }}
 	<main>
-		<h1>Welcome</h1>
-		<p>This is the homepage</p>
+		<h1>Hi, my name is Jan</h1>
+		<p>
+			I am currently studying Artificial Intelligence at the University of Amsterdam. 
+			I also work part time at <a href="https://www.adyen.com/">Adyen</a> as a software engineer.
+		</p>
+
+		<p>
+			<div class="row no-margin">
+				<div class="col-sm-5 col-xs-12 highlight-box">
+					<h3>Recent Posts</h3>
+					{{ range where .Site.RegularPages "Section" "posts" }}
+						<a href="{{.Permalink}}">{{ .Title }}</a><br>
+					{{ end }}
+				</div>
+				<div class="col-sm-1 col-xs-0"></div>
+				<div class="col-sm-5 col-xs-12 highlight-box bg-accent">
+					<h3>Recent Projects</h3>
+					{{ range where .Site.RegularPages "Section" "posts" }}
+						<a href="{{.Permalink}}">{{ .Title }}</a><br>
+					{{ end }}
+				</div>
+				
+			</div>
+		</p>
 	</main>
 {{ end }}

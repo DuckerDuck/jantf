@@ -1,12 +1,14 @@
 {{ define "main" }}
 	<main>
 		<h1>{{ .Title }}</h1>
-		<span class="text-muted">
-			{{ .Date.Format "January 2, 2006" }}
-			{{ if not (eq .Date .Lastmod) }}
-				- updated: {{ .Lastmod.Format "January 2, 2006" }}
-			{{ end}}
-		</span>
+		{{ if eq .Section "posts" }}
+			<span class="text-muted">
+				{{ .Date.Format "January 2, 2006" }}
+				{{ if not (eq .Date .Lastmod) }}
+					- updated: {{ .Lastmod.Format "January 2, 2006" }}
+				{{ end}}
+			</span>
+		{{ end }}
 		<div>
 			{{ .Content }}
 		</div>
