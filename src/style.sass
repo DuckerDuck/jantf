@@ -149,18 +149,34 @@ a
         color: $accent
 
 footer
+    padding: $padding
     height: $footer-height
     background-color: $muted
     margin-top: $footer-margin
 
-.icon-search
+.icon
     display: inline-block
     width: $search-icon-size
     height: $search-icon-size
     background-color: $accent
-    mask: url('icons/search.svg') no-repeat center
     vertical-align: middle
+    margin: $margin
+
+.icon-search
+    mask: url('icons/search.svg') no-repeat center
     margin-right: $search-icon-margin
+
+.icon-github
+    mask: url('icons/github.svg') no-repeat center
+    background-color: $foreground
+
+.icon-linkedin
+    mask: url('icons/linkedin.svg') no-repeat center
+    background-color: $foreground
+
+.icon-rss
+    mask: url('icons/rss.svg') no-repeat center
+    background-color: $foreground
 
 
 #search_btn
