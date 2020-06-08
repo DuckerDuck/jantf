@@ -154,6 +154,10 @@ footer
     background-color: $muted
     margin-top: $footer-margin
 
+.footer-buttons
+    & a
+        text-decoration: none
+
 .icon
     display: inline-block
     width: $search-icon-size
@@ -178,6 +182,11 @@ footer
     mask: url('icons/rss.svg') no-repeat center
     background-color: $foreground
 
+.non-visual-content
+    width: 0
+    height: 0
+    opacity: 0
+    display: inline-block
 
 #search_btn
     cursor: pointer
@@ -247,3 +256,4 @@ footer
 .no-margin
     margin-left: 0
     margin-right: 0
+
