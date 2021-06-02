@@ -35,8 +35,8 @@ This is what a [link](#) looks like.
 3. List item
 
 
-{{<fig alt="example image" caption="Figure caption">}}
-    {{<imgproxy url="local:///mt_cook.jpg" gravity="no">}}
+{{<fig alt="example image" caption="Figure caption" width="600" height="250">}}
+    {{<imgproxy url="local:///mt_cook.jpg" gravity="no" width="600" height="250">}}
 {{</fig>}}
 
 
