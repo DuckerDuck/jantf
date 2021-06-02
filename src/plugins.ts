@@ -1,31 +1,43 @@
 import './plugins.sass'
-import katex from 'katex'
-import Fuse from 'fuse.js'
 
-const math_blocks = document.querySelectorAll('div.math')
+async function renderMath() {
+    const math_blocks = document.querySelectorAll('div.math') as NodeListOf<HTMLElement>
+
+    if (math_blocks.length > 0) {
+        const katex = await import('katex')
+
+        math_blocks.forEach((e) => {
+            if (e.hasAttribute('math')) {
+                const math = e.getAttribute('math')
+                if (math != null) {
+                    katex.render(math, e, {
+                        fleqn: false
+                    })
+                }
+            }
+        })
+    } else {
+        console.warn('No math blocks found')
+    }
+}
+renderMath()
+
+// Search
 const fuse_options = {
     includeScore: true,
     keys: ['categories', 'tags', 'title', 'summary']
 }
 
-math_blocks.forEach((e) => {
-    if (e.hasAttribute('math')){
-        const math = e.getAttribute('math')
-        katex.render(math, e, {
-            fleqn: false
-        })
-    }
-})
-
-// Search
 fetch('/index.json')
-.then(response => response.json())
-.then(data => {
-    initSearch(data)
-})
+    .then(response => response.json())
+    .then(data => {
+        initSearch(data)
+    })
 
-function initSearch(index) {
+async function initSearch(index: any) {
+    const {default: Fuse} = await import('fuse.js')
     const fuse = new Fuse(index, fuse_options)
+    
     const search_field = document.getElementById('search_field') as HTMLInputElement
 
     search_field.addEventListener('keyup', event => {
@@ -34,10 +46,14 @@ function initSearch(index) {
     })
 }
 
-function render_results(results) {
+function render_results(results: any) {
     const results_container = document.getElementById('search_result')
+    if (results_container == null) {
+        console.warn("Could not find container element to render search results.")
+        return
+    }
     results_container.innerHTML = ''
-    
+
     for (let result of results) {
         const container = document.createElement('div')
         container.classList.add('search-result-item')

@@ -11,9 +11,6 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, 'static'),
     },
-    optimization: {
-        runtimeChunk: 'single'
-    },
     module: {
         rules: [
             {
@@ -32,7 +29,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: ['file-loader']
+                type: 'asset/resource'
             }
         ],
     },
