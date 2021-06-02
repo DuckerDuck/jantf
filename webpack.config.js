@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -11,6 +10,9 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'static'),
+    },
+    optimization: {
+        runtimeChunk: 'single'
     },
     module: {
         rules: [
@@ -46,7 +48,6 @@ module.exports = {
     },
     devtool: "source-map",
     plugins: [
-        new MiniCssExtractPlugin(),
-        new FriendlyErrorsWebpackPlugin()
+        new MiniCssExtractPlugin()
     ]
 };
