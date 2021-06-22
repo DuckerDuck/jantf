@@ -1,18 +1,26 @@
-/* Chroma style monokai */
+/* Chroma style */
 @import 'variables'
+@import 'colors'
 
-$chroma-bg: #fafafa
-$chroma-fg: #272822 
-$chroma-name: #75af00
-$chroma-namespace: #f92672
-$chroma-keyword: #00a8c8
-$chroma-literal: #d88200
-$chrome-literal-numeric: #ae81ff
-$chroma-comment: #75715e
-$chroma-name-variable: #111111
-$chroma-string-escape: #8045ff
-$chroma-highlight: #ffffcc
+$chroma-bg: $foreground
+$chroma-fg: $white
+$chroma-name: #a2e07b
+$chroma-namespace: #FFAFAD
+$chroma-keyword: #7ED2DD
+$chroma-literal: #FBB13C
+$chrome-literal-numeric: #D4BCF0
+$chroma-comment: #cecece
+$chroma-name-variable: $white
+$chroma-string-escape: #D4BCF0
+$chroma-highlight: $babypowder
+$chroma-linenumber: $gray-30
 
+div
+	.highlight
+		padding: $padding
+		border-radius: $border-radius
+		box-shadow: $box-shadow
+		background-color: $chroma-bg
 
 .chroma
 	/* Background */
@@ -46,16 +54,23 @@ $chroma-highlight: #ffffcc
 		display: block
 		width: 100%
 		background-color: $chroma-highlight
+
+		.k
+			color: $chroma-bg
+		.vm
+			color: $chroma-bg
+		.p
+			color: $chroma-bg
 	/* LineNumbersTable */
 	.lnt
 		margin-right: 0.4em
 		padding: 0 0.4em 0 0.4em
-		color: #7f7f7f
+		color: $chroma-linenumber
 	/* LineNumbers */
 	.ln
 		margin-right: 0.4em
 		padding: 0 0.4em 0 0.4em
-		color: #7f7f7f
+		color: $chroma-linenumber
 	/* Keyword */
 	.k
 		color: $chroma-keyword
