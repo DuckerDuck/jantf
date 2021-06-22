@@ -2,6 +2,7 @@ baseURL = "localhost:1313/"
 languageCode = "en-GB"
 title = "Jan Schutte"
 enableGitInfo = true
+pygmentsUseClasses = true
 
 [markup.goldmark.renderer]
   unsafe= true
