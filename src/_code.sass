@@ -1,9 +1,23 @@
 /* Chroma style monokai */
-	
+@import 'variables'
+
+$chroma-bg: #fafafa
+$chroma-fg: #272822 
+$chroma-name: #75af00
+$chroma-namespace: #f92672
+$chroma-keyword: #00a8c8
+$chroma-literal: #d88200
+$chrome-literal-numeric: #ae81ff
+$chroma-comment: #75715e
+$chroma-name-variable: #111111
+$chroma-string-escape: #8045ff
+$chroma-highlight: #ffffcc
+
+
 .chroma
 	/* Background */
-	color: #272822
-	background-color: #fafafa
+	color: $chroma-fg
+	background-color: $chroma-bg
 
 	/* Other */
 	.x
@@ -31,7 +45,7 @@
 	.hl
 		display: block
 		width: 100%
-		background-color: #ffffcc
+		background-color: $chroma-highlight
 	/* LineNumbersTable */
 	.lnt
 		margin-right: 0.4em
@@ -44,187 +58,187 @@
 		color: #7f7f7f
 	/* Keyword */
 	.k
-		color: #00a8c8
+		color: $chroma-keyword
 	/* KeywordConstant */
 	.kc
-		color: #00a8c8
+		color: $chroma-keyword
 	/* KeywordDeclaration */
 	.kd
-		color: #00a8c8
+		color: $chroma-keyword
 	/* KeywordNamespace */
 	.kn
-		color: #f92672
+		color: $chroma-namespace
 	/* KeywordPseudo */
 	.kp
-		color: #00a8c8
+		color: $chroma-keyword
 	/* KeywordReserved */
 	.kr
-		color: #00a8c8
+		color: $chroma-keyword
 	/* KeywordType */
 	.kt
-		color: #00a8c8
+		color: $chroma-keyword
 	/* Name */
 	.n
-		color: #111111
+		color: $chroma-name-variable
 	/* NameAttribute */
 	.na
-		color: #75af00
+		color: $chroma-name
 	/* NameBuiltin */
 	.nb
-		color: #111111
+		color: $chroma-name-variable
 	/* NameBuiltinPseudo */
 	.bp
-		color: #111111
+		color: $chroma-name-variable
 	/* NameClass */
 	.nc
-		color: #75af00
+		color: $chroma-name
 	/* NameConstant */
 	.no
-		color: #00a8c8
+		color: $chroma-keyword
 	/* NameDecorator */
 	.nd
-		color: #75af00
+		color: $chroma-name
 	/* NameEntity */
 	.ni
-		color: #111111
+		color: $chroma-name-variable
 	/* NameException */
 	.ne
-		color: #75af00
+		color: $chroma-name
 	/* NameFunction */
 	.nf
-		color: #75af00
+		color: $chroma-name
 	/* NameFunctionMagic */
 	.fm
-		color: #111111
+		color: $chroma-name-variable
 	/* NameLabel */
 	.nl
-		color: #111111
+		color: $chroma-name-variable
 	/* NameNamespace */
 	.nn
-		color: #111111
+		color: $chroma-name-variable
 	/* NameOther */
 	.nx
-		color: #75af00
+		color: $chroma-name
 	/* NameProperty */
 	.py
-		color: #111111
+		color: $chroma-name-variable
 	/* NameTag */
 	.nt
-		color: #f92672
+		color: $chroma-namespace
 	/* NameVariable */
 	.nv
-		color: #111111
+		color: $chroma-name-variable
 	/* NameVariableClass */
 	.vc
-		color: #111111
+		color: $chroma-name-variable
 	/* NameVariableGlobal */
 	.vg
-		color: #111111
+		color: $chroma-name-variable
 	/* NameVariableInstance */
 	.vi
-		color: #111111
+		color: $chroma-name-variable
 	/* NameVariableMagic */
 	.vm
-		color: #111111
+		color: $chroma-name-variable
 	/* Literal */
 	.l
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralDate */
 	.ld
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralString */
 	.s
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringAffix */
 	.sa
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringBacktick */
 	.sb
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringChar */
 	.sc
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringDelimiter */
 	.dl
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringDoc */
 	.sd
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringDouble */
 	.s2
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringEscape */
 	.se
-		color: #8045ff
+		color: $chroma-string-escape
 	/* LiteralStringHeredoc */
 	.sh
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringInterpol */
 	.si
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringOther */
 	.sx
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringRegex */
 	.sr
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringSingle */
 	.s1
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralStringSymbol */
 	.ss
-		color: #d88200
+		color: $chroma-literal
 	/* LiteralNumber */
 	.m
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralNumberBin */
 	.mb
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralNumberFloat */
 	.mf
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralNumberHex */
 	.mh
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralNumberInteger */
 	.mi
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralNumberIntegerLong */
 	.il
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* LiteralNumberOct */
 	.mo
-		color: #ae81ff
+		color: $chrome-literal-numeric
 	/* Operator */
 	.o
-		color: #f92672
+		color: $chroma-namespace
 	/* OperatorWord */
 	.ow
-		color: #f92672
+		color: $chroma-namespace
 	/* Punctuation */
 	.p
-		color: #111111
+		color: $chroma-name-variable
 	/* Comment */
 	.c
-		color: #75715e
+		color: $chroma-comment
 	/* CommentHashbang */
 	.ch
-		color: #75715e
+		color: $chroma-comment
 	/* CommentMultiline */
 	.cm
-		color: #75715e
+		color: $chroma-comment
 	/* CommentSingle */
 	.c1
-		color: #75715e
+		color: $chroma-comment
 	/* CommentSpecial */
 	.cs
-		color: #75715e
+		color: $chroma-comment
 	/* CommentPreproc */
 	.cp
-		color: #75715e
+		color: $chroma-comment
 	/* CommentPreprocFile */
 	.cpf
-		color: #75715e
+		color: $chroma-comment
 	/* Generic */
 	.g
 	/* GenericDeleted */
