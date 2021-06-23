@@ -2,3 +2,4 @@ node_modules/
 static/
 public/
 data/imgproxy/config.json
+server_config.toml
