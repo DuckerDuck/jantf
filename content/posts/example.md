@@ -41,12 +41,13 @@ This is what a [link](#) looks like.
 
 
 
-```python
+```python {linenos=table,linenostart=199}
 import numpy as np
 np.random.seed(21)
 
 def hello(name):
-    print(f'Hello {name}!')
+    a = 1 + 2 / 4
+    print(f'Hello {name}!\n')
 
 if __name__ == '__main__':
     # This is what a comment looks like
