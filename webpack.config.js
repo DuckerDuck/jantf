@@ -40,8 +40,9 @@ module.exports = {
         }
     },
     devServer: {
-        contentBase: './public',
-        quiet: true
+        static: {
+            directory: path.resolve(__dirname, './public')
+        }
     },
     devtool: "source-map",
     plugins: [
