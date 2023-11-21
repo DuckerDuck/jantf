@@ -1,7 +1,7 @@
 ---
 title: "Example Post"
 date: 2020-05-19T00:07:31+02:00
-draft: false
+draft: true
 ---
 ## Introduction
 This page displays various elements so the styling can be developed. Its content
