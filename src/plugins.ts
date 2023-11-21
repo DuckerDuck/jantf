@@ -39,6 +39,10 @@ async function initSearch(index: any) {
     const fuse = new Fuse(index, fuse_options)
     
     const search_field = document.getElementById('search_field') as HTMLInputElement
+    if (search_field === null) {
+        console.log("No search button found :/")
+        return
+    }
 
     search_field.addEventListener('keyup', event => {
         const results = fuse.search(search_field.value)

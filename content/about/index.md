@@ -11,3 +11,6 @@ In my spare time I build things from wood, plastic or code.
 
 Find me on [LinkedIn](https://www.linkedin.com/in/jan-schutte-183145135/) and [Github](https://github.com/SchutteJan).
 
+{{<fig alt="photograph of my face" caption="My face" width="600" height="250">}}
+    {{<imgproxy url="local:///me.jpg" gravity="no" width="600" height="250">}}
+{{</fig>}}
