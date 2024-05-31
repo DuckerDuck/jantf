@@ -1,77 +1,41 @@
-import './plugins.sass'
+enum PluginType {
+    SEARCH = 'search',
+    MATH = 'math',
+}
 
-async function renderMath() {
-    const math_blocks = document.querySelectorAll('div.math') as NodeListOf<HTMLElement>
+// In order to save bandwidth, we load plugins only when needed
+let loaded_plugins: { [index in PluginType]?: boolean } = {}
 
-    if (math_blocks.length > 0) {
-        const katex = await import('katex')
+// Load math plugin when document contains math content
+const has_math = document.querySelectorAll('div.math').length > 0
+if (has_math) {
+    ensure_plugin_loaded(PluginType.MATH)
+}
 
-        math_blocks.forEach((e) => {
-            if (e.hasAttribute('math')) {
-                const math = e.getAttribute('math')
-                if (math != null) {
-                    katex.render(math, e, {
-                        fleqn: false
-                    })
-                }
-            }
-        })
-    } else {
-        console.warn('No math blocks found')
+// Setup search trigger
+const search_btn = document.getElementById('search_btn')
+const search_field = document.getElementById('search_field')
+const search_results = document.getElementById('search_result')
+
+async function ensure_plugin_loaded(plugin: PluginType) {
+    if (plugin in loaded_plugins) {
+        return
     }
-}
-renderMath()
-
-// Search
-const fuse_options = {
-    includeScore: true,
-    keys: ['categories', 'tags', 'title', 'summary']
-}
-
-fetch('/index.json')
-    .then(response => response.json())
-    .then(data => {
-        initSearch(data)
-    })
-
-async function initSearch(index: any) {
-    const {default: Fuse} = await import('fuse.js')
-    const fuse = new Fuse(index, fuse_options)
     
-    const search_field = document.getElementById('search_field') as HTMLInputElement
-    if (search_field === null) {
-        console.log("No search button found :/")
-        return
-    }
-
-    search_field.addEventListener('keyup', event => {
-        const results = fuse.search(search_field.value)
-        render_results(results)
-    })
+    let _ = await import(`./plugins/${plugin}`)
+    loaded_plugins[plugin] = true
 }
 
-function render_results(results: any) {
-    const results_container = document.getElementById('search_result')
-    if (results_container == null) {
-        console.warn("Could not find container element to render search results.")
-        return
-    }
-    results_container.innerHTML = ''
+if (search_btn != null && search_field != null && search_results != null) {
+    search_btn.addEventListener('click', (event) => {
+        ensure_plugin_loaded(PluginType.SEARCH)
 
-    for (let result of results) {
-        const container = document.createElement('div')
-        container.classList.add('search-result-item')
-
-        const a = document.createElement('a')
-        a.innerText = result.item.title
-        a.href = result.item.uri
-
-        const span = document.createElement('span')
-        span.innerText = result.item.date.split('T')[0]
-
-        container.appendChild(a)
-        container.appendChild(span)
-
-        results_container.appendChild(container)
-    }
+        if (search_field.classList.contains('hide')) {
+            search_field.classList.remove('hide')
+            search_field.focus()
+        } else {
+            search_field.classList.add('hide')
+            search_results.innerHTML = ''
+        }
+    })
 }
