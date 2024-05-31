@@ -3,6 +3,7 @@ languageCode = "en-GB"
 title = "Jan Schutte"
 enableGitInfo = true
 pygmentsUseClasses = true
+assetDir = "static"
 
 [markup.goldmark.renderer]
   unsafe= true

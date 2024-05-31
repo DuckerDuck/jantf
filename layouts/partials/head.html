@@ -4,7 +4,11 @@
 <meta name="Description" content="Personal website of Jan Schutte.">
 
 <!-- Critical CSS-->
-<link rel="stylesheet" href="index.css">
+<style>
+    {{ $css := resources.Get "index.css" -}}
+    {{ $style := $css | resources.Minify -}}
+    {{ $style.Content | safeCSS }}
+</style>
 
 
 <title>Jan Schutte</title>
