@@ -7,6 +7,6 @@
 {{ $gravity := or (.Get "gravity") "no" }}
 {{ $enlarge := or (.Get "enlarge") "1" }}
 {{ $extension := or (.Get "extension") "jpg" }}
-{{ $path := printf "%s" (print "/" $resize "/" $width "/" $height "/" $gravity "/" $enlarge "/" $url "." $extension) }}
+{{ $path := printf "%s" (print "/resize:" $resize ":" $width ":" $height ":" $enlarge "/gravity:" $gravity "/" $url "." $extension) }}
 {{ $hmac := shmac "sha256" $key $salt $path | base64URLSafeEncode }}
 https://images.jan.tf/{{ $hmac }}{{ $path }}
